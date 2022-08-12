@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.Navbar label {
+    font-family: 'Pacifico', cursive;
+    font-size: large;
+}
+
+.header .texto h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+.header .texto p {
+    font-size: larger;
+    max-width: 270px;
+}
+
+.header .texto .input-group,
+.header .texto input,
+.header .texto .btn,
+.header .texto input,
+.header .filtro {
+    max-width: 270px;
+    border-radius: 50px;
+    border: none;
+}
+
+.header .texto .input-group input:focus {
+    box-shadow: none;
+}
+
+.header .list-group {
+    background-color: white;
+    max-width: 270px;
+    max-height: 125px;
+    border-radius: 15px;
+    padding: 1% 2%;
+    visibility: collapse;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.header .texto .filtro:hover .list-group {
+    visibility: visible;
+}
+
+.header .list-group .list-group-item {
+    border: none;
+    cursor: pointer;
+}
+
+.header .list-group .list-group-item:hover {
+    background-color: #dad7cd;
+}
+
+.header {
+    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url('https://cdn.pixabay.com/photo/2020/10/05/10/51/cat-5628953_960_720.jpg');
+    background-size: cover;
+    background-position: initial;
+    height: 450px;
+    color: white;
+    border-radius: 50px 50px 0 0;
+    padding: 7%;
+}
+
+.searched {
+    min-height: 500px;
+    background-color: #dad7cd;
+    border-radius: 0 0 50px 50px;
+    padding: 4% 8%;
+}
+
+.searched h5 {
+    font-weight: 400;
+}
+
+.searched .borde {
+    padding: 1.5px;
+    background-color: rgb(92, 23, 23);
+    width: 60px;
+    border-radius: 25px;
+}
+
+.searched h1 {
+    margin: 3% 0;
+    font-weight: 700;
+    max-width: 400px;
+}
+
+.searched .btn {
+    font-weight: 700;
+    color: #774936;
+    margin-top: 9%;
+}
+
+.searched .btn:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.searched .row .col-md-3 .img-1 {
+    background-image: url("https://cdn2.thecatapi.com/images/ZocD-pQxd.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 215px;
+    width: 215px;
+    border-radius: 25px;
+}
+
+.searched .row .col-md-3 .img-2 {
+    background-image: url("https://cdn2.thecatapi.com/images/G_2zGI5Wu.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 215px;
+    width: 215px;
+    border-radius: 25px;
+}
+
+.searched .row .col-md-3 .img-3 {
+    background-image: url("https://cdn2.thecatapi.com/images/06dgGmEOV.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 215px;
+    width: 215px;
+    border-radius: 25px;
+}
+
+.searched .row .col-md-3 .img-4 {
+    background-image: url("https://cdn2.thecatapi.com/images/5dF28H7__.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 215px;
+    width: 215px;
+    border-radius: 25px;
+}
+
+.searched .row .col-md-3 h6 {
+    margin-top: 15px;
+    font-weight: 700;
+    color: #501e1e;
+}
+
+.info {
+    min-height: 100px;
+}
+
+.info .texto {
+    max-width: 400px;
+}
+
+.info .borde, .container .borde {
+    padding: 1.5px;
+    background-color: rgb(92, 23, 23);
+    width: 60px;
+    border-radius: 25px;
+}
+
+.info h1 {
+    font-weight: 700;
+}
+
+.info p {
+    font-weight: 600;
+}
+
+.info .btn {
+    font-weight: 700;
+    color: #774936;
+    padding: 0;
+}
+
+.info .btn:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.info img {
+    border-radius: 25px;
+}
+
+.footer {
+    height: 90px;
+    background-color: black;
+    color: white;
+    margin: 0 7%;
+    margin-top: 5%;
+    border-radius: 50px 50px 0 0;
+    padding: 3% 5%;
+}
+
+.footer h5 {
+    font-family: 'Pacifico', cursive;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.muestra {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 25px;
+}
+
+.muestra img{
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    padding: 0 5%;
+    border-radius: 25px;
+}
