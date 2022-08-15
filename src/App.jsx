@@ -4,10 +4,10 @@ import {
   Route,
   Routes 
 } from 'react-router-dom'
-import Inicio from './components/inicio';
-import Detalle from './components/detalle';
-import Articulo from './components/articulo';
-import Tipos from './components/tipos';
+import Inicio from './components/inicio/inicio';
+import Detalle from './components/detalle/detalle';
+import Articulo from './components/articulo/articulo';
+import Tipos from './components/tipos/tipos';
 
 function App() {
   return (

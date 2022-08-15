@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Navbar from "../navbar/navbar";
+import Footer from "../footer/footer";
 
 function Tipos({ tipos }) {
   return (

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Navbar from "../navbar/navbar";
+import Footer from "../footer/footer";
+import './detalle.css'
 
 function Detalle({ tipo, loanding }) {
 
@@ -9,7 +10,7 @@ function Detalle({ tipo, loanding }) {
     function returnIcons(number) {
       const icons = [];
       for (let index = 0; index < number; index++) {
-        icons.push(<i class="bi bi-star-fill ml-2"></i>);
+        icons.push(<i key={index} className="bi bi-star-fill ml-2"></i>);
       }
       return icons;
     }
@@ -66,9 +67,9 @@ function Detalle({ tipo, loanding }) {
       <div className="row mt-5">
         <h2>Other photos</h2>
         <div className="row mt-4">
-          {tipo.data.map((foto) => {
+          {tipo.data.map((foto, index) => {
             return (
-              <div className="col-md-3 col-sm-6 muestra mb-4 px-3">
+              <div key={index} className="col-md-3 col-sm-6 muestra mb-4 px-3">
                 <img className="img-fluid" src={foto.url} alt="" />
               </div>
             );

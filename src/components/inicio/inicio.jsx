@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Footer from "./footer";
-import Navbar from "./navbar";
+import Footer from "../footer/footer";
+import Navbar from "../navbar/navbar";
 import { connect } from "react-redux";
-import { getDetailsAction, getGatosAction } from "../redux/gatosDunks";
+import { getDetailsAction, getGatosAction } from "../../redux/gatosDunks";
 import { Link, useNavigate } from "react-router-dom";
+import "./inicio.css";
 
 function Inicio({ getGatosAction, array, getDetailsAction }) {
   let navigate = useNavigate();
@@ -16,6 +17,7 @@ function Inicio({ getGatosAction, array, getDetailsAction }) {
     const [breeds, setBreeds] = useState([]);
     const [breedsSearch, setBreedsSearch] = useState([]);
     const [search, setSearch] = useState("");
+    const [focus, setFocus] = useState(false);
 
     useEffect(() => {
       setBreeds(array);
@@ -50,6 +52,12 @@ function Inicio({ getGatosAction, array, getDetailsAction }) {
                 onChange={(e) => {
                   ChangeHandle(e);
                 }}
+                onKeyUp={(e) => {
+                  setFocus(true);
+                }}
+                onKeyDown={(e) => {
+                  setFocus(false);
+                }}
               />
               <div className="input-group-prepend">
                 <div className="btn bg-white">
@@ -57,23 +65,27 @@ function Inicio({ getGatosAction, array, getDetailsAction }) {
                 </div>
               </div>
             </div>
-            <div className="list-group mt-2 text-dark">
-              {breedsSearch.map((breed, index) => {
-                return (
-                  <li
-                    key={index}
-                    className="list-group-item list-group-item-action"
-                    onClick={(e) => {
-                      setSearch(breed.name);
-                      getDetailsAction(breed)
-                      navigate("/breeds/" + breed.name);
-                    }}
-                  >
-                    {breed.name}
-                  </li>
-                );
-              })}
-            </div>
+            {focus ? (
+              <div className="list-group mt-2 text-dark">
+                {breedsSearch.map((breed, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className="list-group-item list-group-item-action"
+                      onClick={(e) => {
+                        setSearch(breed.name);
+                        getDetailsAction(breed);
+                        navigate("/breeds/" + breed.name);
+                      }}
+                    >
+                      {breed.name}
+                    </li>
+                  );
+                })}
+              </div>
+            ) : (
+              <span></span>
+            )}
           </div>
         </div>
       </div>
@@ -86,7 +98,7 @@ function Inicio({ getGatosAction, array, getDetailsAction }) {
         <h5>Most Searched Breeds</h5>
         <div className="borde"></div>
 
-        <Link to='/breeds' className="btn float-right">
+        <Link to="/breeds" className="btn float-right">
           SEE MORE <i className="bi bi-arrow-right"></i>
         </Link>
 
@@ -179,4 +191,6 @@ const mapStateToProps = (state, ownProps) => ({
   array: state.array,
 });
 
-export default connect(mapStateToProps, { getGatosAction, getDetailsAction })(Inicio);
+export default connect(mapStateToProps, { getGatosAction, getDetailsAction })(
+  Inicio
+);

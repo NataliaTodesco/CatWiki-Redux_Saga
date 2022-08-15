@@ -1,0 +1,4 @@
+.Navbar label {
+    font-family: var(--fontFamily);
+    font-size: large;
+}
