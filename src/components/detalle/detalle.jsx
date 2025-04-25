@@ -2,10 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
-import './detalle.css'
+import "./detalle.css";
+import { Link } from "react-router-dom";
 
 function Detalle({ tipo, loanding }) {
-
   function Informacion() {
     function returnIcons(number) {
       const icons = [];
@@ -18,7 +18,7 @@ function Detalle({ tipo, loanding }) {
     return (
       <div className="row">
         <div className="col-md-3 muestra">
-          <img src={tipo.image.url} alt="" className="img-fluid" />
+          <img src={tipo.data[0].url} alt="" className="img-fluid" />
         </div>
         <div className="col-md-1"></div>
         <div className="col-md-8">
@@ -82,6 +82,13 @@ function Detalle({ tipo, loanding }) {
   return (
     <div>
       <Navbar></Navbar>
+      <Link
+        to="/"
+        className="btn btn-dark ml-5 float-left"
+        title="Back to Home"
+      >
+        <i className="bi bi-arrow-left"></i>
+      </Link>
       {loanding ? (
         <p style={{ height: "90vh" }}>Cargando...</p>
       ) : (

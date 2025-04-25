@@ -49,15 +49,9 @@ function Inicio({ getGatosAction, array, getDetailsAction }) {
                 className="form-control pl-3 pb-2"
                 placeholder="Enter your breed"
                 value={search}
-                onChange={(e) => {
-                  ChangeHandle(e);
-                }}
-                onKeyUp={(e) => {
-                  setFocus(true);
-                }}
-                onKeyDown={(e) => {
-                  setFocus(false);
-                }}
+                onChange={(e) => ChangeHandle(e)}
+                onFocus={() => setFocus(true)}
+                onBlur={() => setTimeout(() => setFocus(false), 150)} // Delay para permitir click en item
               />
               <div className="input-group-prepend">
                 <div className="btn bg-white">
@@ -65,26 +59,23 @@ function Inicio({ getGatosAction, array, getDetailsAction }) {
                 </div>
               </div>
             </div>
-            {focus ? (
-              <div className="list-group mt-2 text-dark">
-                {breedsSearch.map((breed, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className="list-group-item list-group-item-action"
-                      onClick={(e) => {
-                        setSearch(breed.name);
-                        getDetailsAction(breed);
-                        navigate("/breeds/" + breed.name);
-                      }}
-                    >
-                      {breed.name}
-                    </li>
-                  );
-                })}
-              </div>
-            ) : (
-              <span></span>
+
+            {focus && search && breedsSearch.length > 0 && (
+              <ul className="list-group mt-2 text-dark position-absolute z-index-100 w-100">
+                {breedsSearch.map((breed, index) => (
+                  <li
+                    key={index}
+                    className="list-group-item list-group-item-action"
+                    onMouseDown={() => {
+                      setSearch(breed.name);
+                      getDetailsAction(breed);
+                      navigate("/breeds/" + breed.name);
+                    }}
+                  >
+                    {breed.name}
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
         </div>

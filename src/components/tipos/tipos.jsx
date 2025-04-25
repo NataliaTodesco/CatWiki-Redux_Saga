@@ -2,13 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
+import { Link } from "react-router-dom";
 
 function Tipos({ tipos }) {
   return (
-    <div>
+    <div className="tipos">
       <Navbar></Navbar>
       <div className="mx-5">
-        <h1>66+ Breeds For you to descover</h1>
+      <Link
+        to="/"
+        className="btn btn-dark ml-5 float-left"
+        title="Back to Home"
+      >
+        <i className="bi bi-arrow-left"></i>
+      </Link>
+        <h1 className="text-center">66+ Breeds For you to descover</h1>
         {tipos.map((tipo, index) => {
           return (
             <div key={tipo.id} className="row">
@@ -29,7 +37,7 @@ function Tipos({ tipos }) {
                 )}
               </div>
               <div className="col-md-9">
-                <h3 className="mb-3 mt-5 pt-1">
+                <h3 className="mb-3 mt-5 pt-1" style={{color: 'var(--bordo)'}}>
                   {index + 1}. {tipo.name}
                 </h3>
                 <h6>{tipo.description}</h6>

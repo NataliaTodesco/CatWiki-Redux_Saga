@@ -27,20 +27,18 @@
 .header .list-group {
     background-color: white;
     max-width: 270px;
-    max-height: 125px;
-    border-radius: 15px;
-    padding: 1% 2%;
+    max-height: 235px;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.header .list-group .list-group-item {
+ .header .list-group .list-group-item {
     border: none;
     cursor: pointer;
 }
 
 .header .list-group .list-group-item:hover {
-    background-color: #dad7cd;
+    background-color: #e6e5e3;
 }
 
 .header {
@@ -88,6 +86,10 @@
 .searched .btn:focus {
     border: none;
     box-shadow: none;
+}
+
+.searched .btn:hover {
+    text-decoration: underline;
 }
 
 .searched .row .col-md-3 .img-1 {
@@ -166,6 +168,10 @@
 .info .btn:focus {
     border: none;
     box-shadow: none;
+}
+
+.info .btn:hover {
+    text-decoration: underline;
 }
 
 .info img {
